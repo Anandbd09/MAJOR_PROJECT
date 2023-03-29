@@ -127,7 +127,7 @@ color:white;
             <a href="patent.php" onclick="setActive(this)">Patent</a>
             <a href="phd.php" onclick="setActive(this)">PhD</a>
             <a href="publications.php" onclick="setActive(this)">Publications</a>
-            <a href="webiner.php" onclick="setActive(this)">Webinar</a>
+            <a href="webinar.php" onclick="setActive(this)">Webinar</a>
           </div>
         </li>
         <li><a href="#contact" onclick="setActive(this)">Display Details</a></li>
