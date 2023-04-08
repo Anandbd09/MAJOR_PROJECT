@@ -1,93 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+<?php
+// Include mPDF library using CDN link
+require_once('https://cdnjs.cloudflare.com/ajax/libs/mpdf/8.0.10/autoload.php');
 
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}
+// Start output buffering
+ob_start();
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+// Include your PHP page
+include 'displaydetails.php';
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+// Get the output
+$html = ob_get_clean();
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+// Create new mPDF object
+$mpdf = new \Mpdf\Mpdf();
 
-.dropdown a:hover {background-color: #ddd;}
+// Generate PDF from HTML content
+$mpdf->WriteHTML($html);
 
-.show {display: block;}
-</style>
-</head>
-<body>
-
-<h2>Clickable Dropdown</h2>
-<p>Click on the button to open the dropdown menu.</p>
-
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">ADD Activity</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
-  
-</div>
-<div>
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Display Activity</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
-</div>
-
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
-
-</body>
-</html>
+// Output the PDF file and prompt the user to download it
+$mpdf->Output('my_pdf_file.pdf', 'D');
+?>

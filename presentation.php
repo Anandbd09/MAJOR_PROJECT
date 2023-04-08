@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Patent Details</title>
+    <title>Registration Form</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css" >
     <style>
@@ -11,51 +11,48 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="mt-5 mb-3">Add Patent details</h1>
+      <h1 class="mt-5 mb-3">Presentation Details</h1>
       <form action="" method="post">
-        <div class="mb-3">
-            <label for="faculty member" class="col-sm-offset col-form-label">Faculty Member</label>
-            <input type="text" class="form-control" id="fmember" placeholder="">
+      <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name" required>
         </div>
-
+   
         <div class="mb-3">
-            <label for="input2" class="col-sm-2 col-form-label">Title</label>
-            <input type="text" class="form-control" id="input2" placeholder="">
+          <label for="Name of the Event" class="form-label">Name of the Event</label>
+          <input type="text" class="form-control" id="eventname" name="eventname" required>
         </div>
-
         <div class="mb-3">
-            <label for="input3" class="col-sm-2 col-form-label">Application No</label>
-            <input type="text" class="form-control" id="ano" placeholder="">
-        </div>
-
-        <div class="mb-3">
-            <label for="input4" class="col-sm-2 col-form-label">Status</label>
-            <input type="text" class="form-control" id="status" placeholder=""> 
-        </div>
-
-        <div class="mb-3">
-            <label for="Paper Published" class="form-label">Paper Published</label>
-            <select class="form-select" id="ppublished" name="ppublished">
-                <option value="">Select</option>
-                <option value="1">Appllied</option>
-                <option value="2">Awarded</option>
-                <option value="3">Published</option>
-            </select>
-        </div>
-    
+								<label for="Type of Activity">Type of Activity</label>
+								<select class="form-control" id="activitytype" name="activitytype" required>
+								<option disabled selected>Select Activity</option>
+								<option value="Invited Talk">Invited Talk</option>
+								<option value="Oral Presentation">Oral Presentation</option>
+                                <option value="Poster Presentation">Poster Presentation</option>
+								</select>
+							</div>
+        
+         <div class="mb-3">
+          <label for="Name of the Activity" class="form-label">Title of the Activity</label>
+          <input type="text" class="form-control" id="activitytitle" name="activitytitle" required>
+        </div>                    
         
         <div class="mb-3">
-            <label for="doi" class="col-sm-offset col-form-label">Award Date</label>
-            <input type="date" class="form-control" id="dop" placeholder="dop">
-        </div>
-
-        <div class="mb-3">
-            <label for="input5" class="col-sm-offset col-form-label">Award Reference No</label>
-            <input type="text" class="form-control" id="arefno" placeholder="">
-        </div>
+        <label for="level" class="form-label">Level</label>
+        <select class="form-select" id="level" name="level">
+        <option disabled selected>Select Level</option>
+        <option value="National">National</option>
+        <option value="international">International</option>
         
+      </select>
+     </div>
+        <div class="mb-3">
+          <label for="dob" class="form-label">Date</label>
+          <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+       
         <div class="text-center">
-            <button type="submit" class="btn btn-primary btn-lg">Add</button>
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
         </div>
       </form>
     </div>

@@ -99,18 +99,31 @@
     } 
 .profile-logo p{
 color:white;
+
+}
+p.user{
+	padding-top:5%;
 }
 
 	</style>
 </head>
 
 <body>
+<?php
+session_start();
+
+$USER=$_SESSION['USERNAME'];
+
+?>
+
     <nav>
 	<ul>
 	    
 		<div class="profile-logo" style="text-align:center;">
-	       <img src="image/images.jpeg" alt="" height="60" width="60">
-		   <p>Welcome,USER</p>
+	       <img src="image/images (1).jpeg" alt="" height="60" width="60" >
+		  
+		   <br>
+		   <p class="user">Welcome,<?php echo $USER ?></p>
           </div>
      <li>
 		
@@ -121,16 +134,16 @@ color:white;
         <li class="dropdown">
           <button onclick="setActive(this)" class="dropbtn">Add Details</button>
           <div id="myDropdown" class="dropdown-content">
-            <a href="book.php" onclick="setActive(this)">Book</a>
-            <a href="conference.php" onclick="setActive(this)">Conference</a>
-            <a href="journal.php"  onclick="setActive(this)">Journal</a>
+            <a href="book.php" onclick="setActive(this)" value="1" >Books/Book Chapters</a>
+            <a href="conference.php" onclick="setActive(this)">Conference Publications</a>
+            <a href="journal.php"  onclick="setActive(this)">Journal Papers</a>
             <a href="patent.php" onclick="setActive(this)">Patent</a>
             <a href="phd.php" onclick="setActive(this)">PhD</a>
-            <a href="publications.php" onclick="setActive(this)">Publications</a>
-            <a href="webinar.php" onclick="setActive(this)">Webinar</a>
+            <a href="presentation.php" onclick="setActive(this)">Presentation</a>
+            <a href="webiner.php" onclick="setActive(this)">Webinar</a>
           </div>
         </li>
-        <li><a href="#contact" onclick="setActive(this)">Display Details</a></li>
+        <li><a href="display.php" onclick="setActive(this)">Display Details</a></li>
 		<li><a href="#contact" onclick="setActive(this)">Edit</a></li>
         
         <li><a href="#about" onclick="setActive(this)">Download</a></li>
@@ -139,13 +152,31 @@ color:white;
 
     </ul>
   </nav>
-  <div style="margin-left:15%;padding:1px 16px;height:1000px;">
-              <div class="logo" style="text-align:center;">
-	       <img src="image/logo.jpg" alt="" height="60" width="60">
-        <h1 style="text-align:center">  B.V.V SANGHA'S  </h1>
-        <h2 style="text-align:center">BASAVESHWAR  ENGINEERING COLLEGE (AUTONOMOUS) BAGALKOT</h2>
+  <div style="margin-left:15%;padding:1px 16px;height:100%;float:left;">
+<!-- 
+              <div class="logo" style="text-align:left;">
+	       <img src="image/logo.jpg" alt="" height="60px" width="60px"> -->
+		   <div class="mt-4;text-center display-4"  >
+		   
+         </div>
+  <div class="row g-2">
+    <div class="col-l-3 col-sm-4 col-6">
+      <div class="card" style="width: 10rem;border:none;">
+        <img src="image/logo.jpg" class="card-img-top img-fluid" alt="...">
+        
+         
+        </div>
+</div>
+</div>
+</div>
+        <h1 style="text-align:center;margin-left:15%;padding:1px 16px;padding-top:2%;">  B.V.V SANGHA'S  </h1>
+        <h2 style="text-align:center;margin-left:15%; margin-top:1%;padding:1px 16px;">BASAVESHWAR  ENGINEERING COLLEGE, BAGALKOTE</h2>
 
-  </div>
+  
+  
+    
+   
+</div>
   </body>
   <script>
     function setActive(link) {

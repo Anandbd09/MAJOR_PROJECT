@@ -81,17 +81,7 @@
         <div class="mb-3">
           <label for="fundingAmount" class="form-label">Funding Amount</label>
           <input type="text" class="form-control" id="fundingAmount" name="fundingAmount">
-        </div>
-
-       
-
-
-        
-      
-
-     
-
-    
+        </div> 
   </div>
 </div>
 <div class="row">
